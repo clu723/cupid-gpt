@@ -4,3 +4,6 @@ pyyaml
 numpy
 langchain
 flask-cors
+pydub
+npm next
+ffmpeg
