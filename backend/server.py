@@ -10,14 +10,17 @@ import tempfile
 app = Flask(__name__)
 CORS(app)
 
-API_KEY = "sk-******"
+API_KEY = "sk-*****" # insert real OpenAI API key here
 
 if API_KEY:
     client = OpenAI(api_key=API_KEY)
 else:
     raise ValueError("Please set your OpenAI API key.")
 
-gpt_prompts = [{"role": "system", "content": "I am a man and you are a woman. Pretend to be a witty woman who is great at making conversation. Be flirty whenever appropriate."}]
+
+gpt_prompts = [{"role": "system", "content": "I am a man and you are a woman. Pretend to be a witty woman who is great at making conversation. " + 
+                "Be flirty whenever appropriate." +
+                "Keep each message short."}]
 
 @app.route('/process_mp3', methods=['POST'])
 def process_mp3():
